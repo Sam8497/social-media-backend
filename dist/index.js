@@ -12,7 +12,9 @@ const cors_1 = __importDefault(require("cors"));
 const db_1 = __importDefault(require("./config/db"));
 const app = (0, express_1.default)();
 app.use(express_1.default.json());
-app.use((0, cors_1.default)());
+app.use((0, cors_1.default)({
+    origin: ["https://social-media-backend-lfod.vercel.app", "http://localhost:3000"],
+}));
 app.use(express_1.default.urlencoded({ extended: true }));
 app.use("/api/users", userRoute_1.default);
 app.use("/api/posts", postRoute_1.default);
@@ -24,7 +26,7 @@ app.get("/", (request, response) => {
 app.get("/ip", (request, response) => response.send(request.ip));
 app.set("trust proxy", 1);
 dotenv_1.default.config();
-const PORT = process.env.PORT || 8000;
+const PORT = 8000;
 const MONGO_URL = process.env.MONGO_URL;
 app.listen(PORT, () => {
     mongoose_1.default.connect(MONGO_URL, () => {
