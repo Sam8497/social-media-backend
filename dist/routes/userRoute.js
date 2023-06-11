@@ -34,7 +34,7 @@ const createUserLimiter = (0, express_rate_limit_1.default)({
 const router = express_1.default.Router();
 const storage = multer_1.default.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, "public/images");
+        cb(null, "../public/images/");
     },
     filename: function (req, file, cb) {
         cb(null, (0, uuid_1.v4)() + "-" + Date.now() + path_1.default.extname(file.originalname));
