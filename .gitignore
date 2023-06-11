@@ -4,3 +4,4 @@ dist
 .env
 .pac
 package-lock.json
+functions
