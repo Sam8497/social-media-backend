@@ -24,7 +24,7 @@ app.set("trust proxy", 1);
 
 dotenv.config();
 
-const PORT = process.env.PORT || 8000;
+const PORT = 8000;
 const MONGO_URL: any = process.env.MONGO_URL;
 
 app.listen(PORT, () => {
