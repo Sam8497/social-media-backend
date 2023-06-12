@@ -18,7 +18,7 @@ app.use((0, cors_1.default)({
 app.use(express_1.default.urlencoded({ extended: true }));
 app.use("/api/users", userRoute_1.default);
 app.use("/api/posts", postRoute_1.default);
-app.use("/images", express_1.default.static("../public/images/"));
+app.use("/images", express_1.default.static("public/images"));
 (0, db_1.default)();
 app.get("/", (request, response) => {
     response.send("Hello world");
